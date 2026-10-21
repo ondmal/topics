@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" width="1100" height="640" role="img" aria-labelledby="title desc">
+  <title id="title">What goes where</title>
+  <desc id="desc">For every paragraph, ask whether it can be got from the code easily, by the reader or by an agent on their behalf. If yes, it is reference, distilled from the code on demand rather than written by hand: every public type and its members, which module calls which, each step of a mechanism file by file, a business rule as a condition, the database schema, build and deployment configuration, and tests as examples that run. If no, it is understanding, written once and kept in step with the code: design decisions with their reason, trade-offs, alternatives and date; technical debt as a register with thresholds for acting; business rules in plain language, written from the source; context and requirements, meaning where the component sits, what it must do and why; contracts, meaning what a consumer relies on and must do; operational knowledge about deploying, observing and testing; topics that walk a mechanism end to end, and investigations; and guides for those who use, extend or integrate. Like a technology's API reference and its guides: the reference can be generated from the source, the understanding has to be written.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2f4f8"/>
+      <stop offset="1" stop-color="#e6eaf1"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4f6bff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4f6bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ours" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f7ff"/>
+      <stop offset="1" stop-color="#eaefff"/>
+    </linearGradient>
+    <linearGradient id="oursStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f6bff"/>
+      <stop offset="1" stop-color="#9b5cff"/>
+    </linearGradient>
+    <linearGradient id="ext" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfcfe"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#0f172a" fill-opacity="0.08"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="shadow" x="-10%" y="-25%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1e293b" flood-opacity="0.08"/>
+    </filter>
+    <marker id="aAccent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d84ff"/>
+    </marker>
+    <marker id="aMuted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a7b2c6"/>
+    </marker>
+    <style>
+      text { font-family: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; fill: #4f6bff; }
+      .eyebrowS{ font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #6b7cc4; }
+      .phase   { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #3546b3; }
+      .phaseE  { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #64748b; }
+      .h1      { font-size: 21px; font-weight: 600; fill: #0f172a; }
+      .ttl     { font-size: 13px; font-weight: 600; fill: #111827; }
+      .sub     { font-size: 11px; fill: #64748b; }
+      .subO    { font-size: 11px; fill: #4a58b8; }
+      .chip    { font-size: 11px; font-weight: 500; fill: #3546b3; }
+      .chipE   { font-size: 11px; font-weight: 600; fill: #64748b; }
+      .note    { font-size: 12px; fill: #475569; }
+      .noteB   { font-size: 12px; font-weight: 600; fill: #0f172a; }
+      .legend  { font-size: 11.5px; fill: #64748b; }
+      .panel   { fill: #ffffff; fill-opacity: 0.5; stroke: #dfe4ef; stroke-width: 1; }
+      .panelO  { fill: #4f6bff; fill-opacity: 0.04; stroke: #c3cdfa; stroke-width: 1; }
+      .cardO   { fill: url(#ours); stroke: url(#oursStroke); stroke-width: 1.5; filter: url(#shadow); }
+      .cardE   { fill: url(#ext); stroke: #cfd6e3; stroke-width: 1.2; filter: url(#shadow); }
+      .lnO     { fill: none; stroke: #6d84ff; stroke-width: 1.8; }
+      .lnE     { fill: none; stroke: #a7b2c6; stroke-width: 1.5; }
+      .chipBg  { fill: #4f6bff; fill-opacity: 0.10; stroke: #4f6bff; stroke-opacity: 0.40; stroke-width: 1; }
+      .chipBgE { fill: #ffffff; stroke: #cfd6e3; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1100" height="640" rx="22" fill="url(#bg)"/>
+  <rect width="1100" height="640" rx="22" fill="url(#dots)"/>
+  <ellipse cx="760" cy="400" rx="380" ry="220" fill="url(#halo)"/>
+
+  <!-- Header -->
+  <text class="eyebrow" x="44" y="44">WHAT GOES WHERE · THE TEST</text>
+  <text class="h1" x="44" y="72">Write what the reader cannot easily get from the code</text>
+  <circle cx="860" cy="52" r="5" fill="url(#oursStroke)"/>
+  <text class="legend" x="872" y="56">documentation</text>
+  <circle cx="988" cy="52" r="5" fill="#c3ccdb"/>
+  <text class="legend" x="1000" y="56">code</text>
+
+  <!-- The question -->
+  <rect x="290" y="100" width="520" height="72" rx="12" filter="url(#glow)" style="fill:none;stroke:#6d8dff;stroke-width:6;stroke-opacity:0.2"/>
+  <rect class="cardO" x="290" y="100" width="520" height="72" rx="12"/>
+  <text class="ttl" x="550" y="130" text-anchor="middle">Can it be got from the code easily — by the reader, or by an agent for them?</text>
+  <text class="subO" x="550" y="152" text-anchor="middle">asked for every paragraph</text>
+
+  <!-- Branches -->
+  <path class="lnE" d="M440 172 V212 H250 V252" marker-end="url(#aMuted)"/>
+  <path class="lnO" d="M660 172 V212 H770 V252" marker-end="url(#aAccent)"/>
+  <rect class="chipBgE" x="322" y="202" width="40" height="20" rx="10"/>
+  <text class="chipE" x="342" y="216" text-anchor="middle">yes</text>
+  <rect class="chipBg" x="696" y="202" width="36" height="20" rx="10"/>
+  <text class="chip" x="714" y="216" text-anchor="middle">no</text>
+
+  <!-- Code side -->
+  <rect class="panel" x="40" y="254" width="420" height="326" rx="14"/>
+  <text class="phaseE" x="60" y="282">REFERENCE · LEAVE IT TO THE CODE</text>
+  <text class="sub" x="60" y="300">distilled on demand, not written by hand — a copy drifts</text>
+
+  <rect class="cardE" x="60" y="316" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="335">every public type and its members</text>
+  <rect class="cardE" x="60" y="352" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="371">which module calls which</text>
+  <rect class="cardE" x="60" y="388" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="407">each step of a mechanism, file by file</text>
+  <rect class="cardE" x="60" y="424" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="443">a business rule, as a condition</text>
+  <rect class="cardE" x="60" y="460" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="479">the database schema</text>
+  <rect class="cardE" x="60" y="496" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="515">build and deployment configuration</text>
+  <rect class="cardE" x="60" y="532" width="380" height="30" rx="9"/>
+  <text class="note" x="74" y="551">tests — examples that run</text>
+
+  <!-- Documentation side -->
+  <rect class="panelO" x="480" y="254" width="580" height="326" rx="14"/>
+  <text class="phase" x="500" y="282">UNDERSTANDING · WRITE IT DOWN</text>
+  <text class="subO" x="500" y="300">how, why and where to look — written once, kept in step</text>
+
+  <rect class="cardO" x="500" y="316" width="262" height="56" rx="11"/>
+  <text class="ttl" x="514" y="339">Context and requirements</text>
+  <text class="subO" x="514" y="358">where it sits, what it must do, and why</text>
+  <rect class="cardO" x="778" y="316" width="262" height="56" rx="11"/>
+  <text class="ttl" x="792" y="339">Design decisions</text>
+  <text class="subO" x="792" y="358">why · trade-offs · alternatives · date</text>
+
+  <rect class="cardO" x="500" y="380" width="262" height="56" rx="11"/>
+  <text class="ttl" x="514" y="403">Technical debt</text>
+  <text class="subO" x="514" y="422">a register, with thresholds for acting</text>
+  <rect class="cardO" x="778" y="380" width="262" height="56" rx="11"/>
+  <text class="ttl" x="792" y="403">Business rules</text>
+  <text class="subO" x="792" y="422">plain language, from the source</text>
+
+  <rect class="cardO" x="500" y="444" width="262" height="56" rx="11"/>
+  <text class="ttl" x="514" y="467">Contracts</text>
+  <text class="subO" x="514" y="486">what a consumer relies on and must do</text>
+  <rect class="cardO" x="778" y="444" width="262" height="56" rx="11"/>
+  <text class="ttl" x="792" y="467">Operational knowledge</text>
+  <text class="subO" x="792" y="486">deploy · observe · test</text>
+
+  <rect class="cardO" x="500" y="508" width="262" height="56" rx="11"/>
+  <text class="ttl" x="514" y="531">Topics</text>
+  <text class="subO" x="514" y="550">a mechanism end to end; investigations</text>
+  <rect class="cardO" x="778" y="508" width="262" height="56" rx="11"/>
+  <text class="ttl" x="792" y="531">Guides</text>
+  <text class="subO" x="792" y="550">for those who use, extend or integrate</text>
+
+  <!-- Note -->
+  <text class="note" x="550" y="614" text-anchor="middle"><tspan class="noteB">Like a technology's API reference and its guides</tspan> — the reference can be generated from the source; the understanding has to be written</text>
+</svg>

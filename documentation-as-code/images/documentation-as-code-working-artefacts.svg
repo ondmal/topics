@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="1100" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Working artefacts and the documentation state</title>
+  <desc id="desc">On the branch, one task passes through working artefacts: a task description says what is wanted and why; a specification states the intended behaviour and can be reviewed at a first, optional gate in its own pull request; an implementation plan lists the steps for the developer and the agent; then the change itself, code and documentation together, is reviewed at the second gate, the pull request. The working artefacts are removed before merge: deleted, with the pull request and the Git history as the record, or archived in a separate tier for teams that want the full evidence; either way they are never read as the current state. On the main branch the documentation moves from its state before the task to a new state: the current design, and only it.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2f4f8"/>
+      <stop offset="1" stop-color="#e6eaf1"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4f6bff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4f6bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ours" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f7ff"/>
+      <stop offset="1" stop-color="#eaefff"/>
+    </linearGradient>
+    <linearGradient id="oursStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f6bff"/>
+      <stop offset="1" stop-color="#9b5cff"/>
+    </linearGradient>
+    <linearGradient id="ext" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfcfe"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#0f172a" fill-opacity="0.08"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="shadow" x="-10%" y="-25%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1e293b" flood-opacity="0.08"/>
+    </filter>
+    <marker id="aAccent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d84ff"/>
+    </marker>
+    <marker id="aMuted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a7b2c6"/>
+    </marker>
+    <style>
+      text { font-family: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; fill: #4f6bff; }
+      .eyebrowS{ font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #6b7cc4; }
+      .phase   { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #3546b3; }
+      .phaseE  { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #64748b; }
+      .h1      { font-size: 21px; font-weight: 600; fill: #0f172a; }
+      .ttl     { font-size: 13px; font-weight: 600; fill: #111827; }
+      .sub     { font-size: 11px; fill: #64748b; }
+      .subO    { font-size: 11px; fill: #4a58b8; }
+      .chip    { font-size: 11px; font-weight: 500; fill: #3546b3; }
+      .note    { font-size: 12px; fill: #475569; }
+      .noteB   { font-size: 12px; font-weight: 600; fill: #0f172a; }
+      .legend  { font-size: 11.5px; fill: #64748b; }
+      .panel   { fill: #ffffff; fill-opacity: 0.5; stroke: #dfe4ef; stroke-width: 1; }
+      .panelO  { fill: #4f6bff; fill-opacity: 0.04; stroke: #c3cdfa; stroke-width: 1; }
+      .cardO   { fill: url(#ours); stroke: url(#oursStroke); stroke-width: 1.5; filter: url(#shadow); }
+      .cardE   { fill: url(#ext); stroke: #cfd6e3; stroke-width: 1.2; filter: url(#shadow); }
+      .cardW   { fill: #ffffff; fill-opacity: 0.8; stroke: #9aa9ff; stroke-width: 1.3; stroke-dasharray: 5 4; filter: url(#shadow); }
+      .lnO     { fill: none; stroke: #6d84ff; stroke-width: 1.8; }
+      .lnE     { fill: none; stroke: #a7b2c6; stroke-width: 1.5; }
+      .lnAlt   { fill: none; stroke: #a7b2c6; stroke-width: 1.5; stroke-dasharray: 5 4; }
+      .chipBg  { fill: #4f6bff; fill-opacity: 0.10; stroke: #4f6bff; stroke-opacity: 0.40; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1100" height="560" rx="22" fill="url(#bg)"/>
+  <rect width="1100" height="560" rx="22" fill="url(#dots)"/>
+  <ellipse cx="760" cy="300" rx="420" ry="190" fill="url(#halo)"/>
+
+  <!-- Header -->
+  <text class="eyebrow" x="44" y="44">TWO KINDS OF DOCUMENTS · ONE TASK</text>
+  <text class="h1" x="44" y="72">Working artefacts drive the change; the documentation state is what remains</text>
+  <circle cx="860" cy="52" r="5" fill="url(#oursStroke)"/>
+  <text class="legend" x="872" y="56">lasting</text>
+  <rect x="934" y="46" width="14" height="12" rx="3" style="fill:#ffffff;stroke:#9aa9ff;stroke-width:1.2;stroke-dasharray:3 2"/>
+  <text class="legend" x="956" y="56">working artefact</text>
+
+  <!-- Branch lane -->
+  <rect class="panel" x="40" y="100" width="1020" height="186" rx="14"/>
+  <text class="phaseE" x="64" y="126">ON THE BRANCH · ONE TASK</text>
+
+  <path class="lnE" d="M283 200 H313" marker-end="url(#aMuted)"/>
+  <path class="lnE" d="M534 200 H564" marker-end="url(#aMuted)"/>
+  <path class="lnO" d="M785 200 H815" marker-end="url(#aAccent)"/>
+
+  <rect class="cardW" x="64" y="140" width="219" height="120" rx="12"/>
+  <text class="eyebrowS" x="78" y="164">WORKING</text>
+  <text class="ttl" x="78" y="188">Task description</text>
+  <text class="sub" x="78" y="208">what is wanted and why,</text>
+  <text class="sub" x="78" y="224">in the words of whoever asked</text>
+
+  <rect class="cardW" x="315" y="140" width="219" height="120" rx="12"/>
+  <text class="eyebrowS" x="329" y="164">WORKING</text>
+  <text class="ttl" x="329" y="188">Specification</text>
+  <text class="sub" x="329" y="208">the intended behaviour;</text>
+  <text class="sub" x="329" y="224">reviewed on its own</text>
+  <rect class="chipBg" x="329" y="232" width="164" height="20" rx="10"/>
+  <text class="chip" x="411" y="246" text-anchor="middle">gate 1 · own PR, optional</text>
+
+  <rect class="cardW" x="566" y="140" width="219" height="120" rx="12"/>
+  <text class="eyebrowS" x="580" y="164">WORKING</text>
+  <text class="ttl" x="580" y="188">Implementation plan</text>
+  <text class="sub" x="580" y="208">steps, files and their order,</text>
+  <text class="sub" x="580" y="224">for the developer and the agent</text>
+
+  <rect x="817" y="140" width="219" height="120" rx="12" filter="url(#glow)" style="fill:none;stroke:#6d8dff;stroke-width:6;stroke-opacity:0.2"/>
+  <rect class="cardO" x="817" y="140" width="219" height="120" rx="12"/>
+  <text class="eyebrowS" x="831" y="164">LASTING</text>
+  <text class="ttl" x="831" y="188">The change</text>
+  <text class="subO" x="831" y="208">code and documentation,</text>
+  <text class="subO" x="831" y="224">in one diff</text>
+  <rect class="chipBg" x="831" y="232" width="136" height="20" rx="10"/>
+  <text class="chip" x="899" y="246" text-anchor="middle">gate 2 · pull request</text>
+
+  <!-- Working artefacts leave -->
+  <path class="lnAlt" d="M424 260 V302 H173"/>
+  <path class="lnAlt" d="M675 260 V302 H173"/>
+  <path class="lnAlt" d="M173 260 V364" marker-end="url(#aMuted)"/>
+
+  <!-- Left behind -->
+  <rect class="panel" x="40" y="318" width="266" height="148" rx="14"/>
+  <text class="phaseE" x="196" y="344">LEFT BEHIND</text>
+  <rect class="cardE" x="64" y="366" width="219" height="74" rx="11"/>
+  <text class="ttl" x="78" y="392">Removed before merge</text>
+  <text class="sub" x="78" y="412">deleted, or archived aside;</text>
+  <text class="sub" x="78" y="428">never read as the current state</text>
+
+  <!-- Main lane -->
+  <rect class="panelO" x="315" y="318" width="745" height="148" rx="14"/>
+  <text class="phase" x="339" y="344">ON MAIN · THE DOCUMENTATION STATE</text>
+  <text class="note" x="339" y="384">What the task leaves behind: the</text>
+  <text class="note" x="339" y="402">context, decisions, rules and</text>
+  <text class="note" x="339" y="420">contracts as they are now, merged</text>
+  <text class="note" x="339" y="438">with the code that implements them.</text>
+
+  <path class="lnO" d="M926 260 V364" marker-end="url(#aAccent)"/>
+  <path class="lnO" d="M785 403 H815" marker-end="url(#aAccent)"/>
+
+  <rect class="cardO" x="566" y="366" width="219" height="74" rx="11"/>
+  <text class="ttl" x="580" y="392">State before</text>
+  <text class="subO" x="580" y="412">the documentation at</text>
+  <text class="subO" x="580" y="428">the base commit</text>
+
+  <rect class="cardO" x="817" y="366" width="219" height="74" rx="11"/>
+  <text class="ttl" x="831" y="392">State after</text>
+  <text class="subO" x="831" y="412">the current design,</text>
+  <text class="subO" x="831" y="428">and only it</text>
+
+  <!-- Note -->
+  <text class="note" x="550" y="512" text-anchor="middle"><tspan class="noteB">Two gates</tspan> — gaps found in the specification cost a paragraph; the pull request checks the change against what was agreed</text>
+</svg>

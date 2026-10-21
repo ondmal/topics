@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="1100" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Lifecycle of documentation as a source artefact</title>
+  <desc id="desc">Four moves, with code and documentation travelling together. One: everything lives in the repository, on one branch, in one diff, as one version. Two: a developer and an AI coding agent write code and documentation in one change; the documentation index tells the agent what to update. Three: one pull request, in which peers review the decisions and reviewer agents check the consistency. Four: the change merges as one version, so the documentation of a release is the documentation at its commit, and the pipeline renders text and diagrams, never copied by hand. Three audiences: the development team reads and changes the source in the repository; AI agents read it there as context for every task; other roles, such as analysts, product owners, testers and support, read the published copy in a wiki, Confluence or a static site. Published pages are never edited where they are published.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2f4f8"/>
+      <stop offset="1" stop-color="#e6eaf1"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4f6bff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#4f6bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ours" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f7ff"/>
+      <stop offset="1" stop-color="#eaefff"/>
+    </linearGradient>
+    <linearGradient id="oursStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f6bff"/>
+      <stop offset="1" stop-color="#9b5cff"/>
+    </linearGradient>
+    <linearGradient id="ext" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfcfe"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#0f172a" fill-opacity="0.08"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="shadow" x="-10%" y="-25%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#1e293b" flood-opacity="0.08"/>
+    </filter>
+    <marker id="aAccent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d84ff"/>
+    </marker>
+    <marker id="aMuted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a7b2c6"/>
+    </marker>
+    <style>
+      text { font-family: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; fill: #4f6bff; }
+      .eyebrowS{ font-size: 10px; font-weight: 700; letter-spacing: 1.6px; fill: #6b7cc4; }
+      .phase   { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #3546b3; }
+      .phaseE  { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #64748b; }
+      .h1      { font-size: 21px; font-weight: 600; fill: #0f172a; }
+      .ttl     { font-size: 13px; font-weight: 600; fill: #111827; }
+      .sub     { font-size: 11px; fill: #64748b; }
+      .subO    { font-size: 11px; fill: #4a58b8; }
+      .chip    { font-size: 11px; font-weight: 500; fill: #3546b3; }
+      .note    { font-size: 12px; fill: #475569; }
+      .noteB   { font-size: 12px; font-weight: 600; fill: #0f172a; }
+      .legend  { font-size: 11.5px; fill: #64748b; }
+      .panel   { fill: #ffffff; fill-opacity: 0.5; stroke: #dfe4ef; stroke-width: 1; }
+      .panelO  { fill: #4f6bff; fill-opacity: 0.04; stroke: #c3cdfa; stroke-width: 1; }
+      .cardO   { fill: url(#ours); stroke: url(#oursStroke); stroke-width: 1.5; filter: url(#shadow); }
+      .cardE   { fill: url(#ext); stroke: #cfd6e3; stroke-width: 1.2; filter: url(#shadow); }
+      .lnO     { fill: none; stroke: #6d84ff; stroke-width: 1.8; }
+      .lnE     { fill: none; stroke: #a7b2c6; stroke-width: 1.5; }
+      .chipBg  { fill: #4f6bff; fill-opacity: 0.10; stroke: #4f6bff; stroke-opacity: 0.40; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1100" height="560" rx="22" fill="url(#bg)"/>
+  <rect width="1100" height="560" rx="22" fill="url(#dots)"/>
+  <ellipse cx="550" cy="230" rx="500" ry="170" fill="url(#halo)"/>
+
+  <!-- Header -->
+  <text class="eyebrow" x="44" y="44">LIFECYCLE · ONE CHANGE</text>
+  <text class="h1" x="44" y="72">Documentation travels with the code, from the first edit to every reader</text>
+  <circle cx="870" cy="52" r="5" fill="url(#oursStroke)"/>
+  <text class="legend" x="882" y="56">the source</text>
+  <circle cx="966" cy="52" r="5" fill="#c3ccdb"/>
+  <text class="legend" x="978" y="56">readers</text>
+
+  <!-- Repository lane -->
+  <rect class="panelO" x="40" y="100" width="1020" height="218" rx="14"/>
+  <text class="phase" x="64" y="126">1 · IN THE REPOSITORY — ONE BRANCH, ONE DIFF, ONE VERSION</text>
+
+  <!-- Step connectors -->
+  <path class="lnO" d="M364 216 H404" marker-end="url(#aAccent)"/>
+  <path class="lnO" d="M706 216 H746" marker-end="url(#aAccent)"/>
+
+  <!-- 2 Write -->
+  <rect x="64" y="142" width="300" height="150" rx="12" filter="url(#glow)" style="fill:none;stroke:#6d8dff;stroke-width:6;stroke-opacity:0.2"/>
+  <rect class="cardO" x="64" y="142" width="300" height="150" rx="12"/>
+  <text class="eyebrowS" x="78" y="166">2 · WRITE</text>
+  <text class="ttl" x="78" y="190">Code and docs, one change</text>
+  <text class="subO" x="78" y="212">developer + AI coding agent;</text>
+  <text class="subO" x="78" y="228">the index says what to update</text>
+  <rect class="chipBg" x="78" y="256" width="46" height="20" rx="10"/>
+  <text class="chip" x="101" y="270" text-anchor="middle">code</text>
+  <rect class="chipBg" x="130" y="256" width="46" height="20" rx="10"/>
+  <text class="chip" x="153" y="270" text-anchor="middle">docs</text>
+
+  <!-- 3 Review -->
+  <rect class="cardO" x="406" y="142" width="300" height="150" rx="12"/>
+  <text class="eyebrowS" x="420" y="166">3 · REVIEW</text>
+  <text class="ttl" x="420" y="190">One pull request</text>
+  <text class="subO" x="420" y="212">peers review the decisions;</text>
+  <text class="subO" x="420" y="228">reviewer agents, the consistency</text>
+  <rect class="chipBg" x="420" y="256" width="46" height="20" rx="10"/>
+  <text class="chip" x="443" y="270" text-anchor="middle">code</text>
+  <rect class="chipBg" x="472" y="256" width="46" height="20" rx="10"/>
+  <text class="chip" x="495" y="270" text-anchor="middle">docs</text>
+
+  <!-- 4 Merge and publish -->
+  <rect class="cardO" x="748" y="142" width="300" height="150" rx="12"/>
+  <text class="eyebrowS" x="762" y="166">4 · MERGE AND PUBLISH</text>
+  <text class="ttl" x="762" y="190">One version, every surface</text>
+  <text class="subO" x="762" y="212">the docs of a release are the docs at its commit;</text>
+  <text class="subO" x="762" y="228">the pipeline renders them — never copied by hand</text>
+  <rect class="chipBg" x="762" y="256" width="46" height="20" rx="10"/>
+  <text class="chip" x="785" y="270" text-anchor="middle">code</text>
+  <rect class="chipBg" x="814" y="256" width="46" height="20" rx="10"/>
+  <text class="chip" x="837" y="270" text-anchor="middle">docs</text>
+  <rect class="chipBg" x="866" y="256" width="66" height="20" rx="10"/>
+  <text class="chip" x="899" y="270" text-anchor="middle">diagrams</text>
+
+  <!-- Readers lane -->
+  <rect class="panel" x="40" y="340" width="1020" height="136" rx="14"/>
+  <text class="phaseE" x="64" y="370">THREE AUDIENCES</text>
+  <text class="note" x="64" y="396">The team and its agents read the</text>
+  <text class="note" x="64" y="414">merged source; every other role</text>
+  <text class="note" x="64" y="432">reads the published copy of the</text>
+  <text class="note" x="64" y="450">same commit.</text>
+
+  <path class="lnE" d="M820 292 V332 H425 V372" marker-end="url(#aMuted)"/>
+  <path class="lnE" d="M860 292 V340 H675 V372" marker-end="url(#aMuted)"/>
+  <path class="lnE" d="M960 292 V372" marker-end="url(#aMuted)"/>
+
+  <rect class="cardE" x="314" y="374" width="222" height="76" rx="11"/>
+  <text class="ttl" x="328" y="400">Development team</text>
+  <text class="sub" x="328" y="420">reads and changes it</text>
+  <text class="sub" x="328" y="436">in the repository</text>
+
+  <rect class="cardE" x="564" y="374" width="222" height="76" rx="11"/>
+  <text class="ttl" x="578" y="400">AI agents</text>
+  <text class="sub" x="578" y="420">read it in the repository</text>
+  <text class="sub" x="578" y="436">as context for every task</text>
+
+  <rect class="cardE" x="814" y="374" width="222" height="76" rx="11"/>
+  <text class="ttl" x="828" y="400">Other roles</text>
+  <text class="sub" x="828" y="420">analysts · product · testers · support;</text>
+  <text class="sub" x="828" y="436">wiki · Confluence · static site</text>
+
+  <!-- Note -->
+  <text class="note" x="550" y="520" text-anchor="middle"><tspan class="noteB">Never edited where published</tspan> — a correction is a change in the repository, reviewed and merged like any other</text>
+</svg>

@@ -1,0 +1,11 @@
+title: Topics
+description: Ideas from experience in software architecture and team leadership, each described in some depth.
+defaults:
+  - scope:
+      path: ""
+    values:
+      title: Topics
+  - scope:
+      path: "documentation-as-code"
+    values:
+      title: Documentation as a source artefact
