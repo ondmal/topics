@@ -20,7 +20,9 @@ affordable — as a tool doing the mechanical part, with the developer in charge
   specification and plan are working artefacts that leave with the task; what
   remains is a new state of the documentation.
 - **What keeps it honest** — a few rules an agent can check: status, not
-  history; the code is the reference; one fact, one home.
+  history; the code is the reference; one fact, one home. What no diff reaches
+  — context, requirements, the premises behind decisions — has no such check;
+  a reviewer agent catches some of it, people the rest.
 - **Where to start** — small: the repository, an index, and the decisions
   nobody wrote down.
 
@@ -109,8 +111,8 @@ What passes the test:
   owns and what it does not. Its requirements belong with that context — the
   business need behind each, who asked and why — or they get met to the letter
   and missed in spirit.
-- **Design decisions** — the reason, the trade-offs (what it gains, costs and
-  gives up), the alternatives rejected, and the date. The code shows what was
+- **Design decisions** — the reason, the premises it rests on, the trade-offs
+  (what it gains, costs and gives up), the alternatives rejected, and the date. The code shows what was
   chosen; only the record shows why not the obvious alternative. Without it the
   next team reverses a decision without knowing what it protected, or keeps one
   long after its reason has gone; the date shows a choice was made at a tenth of
@@ -233,6 +235,23 @@ check is a rule that holds.
 - **The generic apart from the specific.** An engine apart from its variants, a
   component apart from one consumer's use of it — otherwise the one case reads
   as the only case.
+
+## What no diff reaches
+
+The four moves and the reviewer agents keep honest what is connected to the
+code: a rule changes, the diff shows it, the text follows. The most valuable
+documents have no such trigger. Context, requirements and the reasons behind
+decisions describe the world around the component — the neighbouring systems,
+the business flows, the load, the regulation — and that world changes without a
+line of code changing here. A decision taken for a system that has since been
+replaced reads as current, and an agent acts on it.
+
+This is inherent, and I have no good solution for it. What helps, in part: a
+decision names the premises it rests on, so there is something to check at all;
+and the reviewer agents, with the operational documentation, the configuration
+and the contracts of neighbours in front of them, catch some of what has stopped
+being true — some, not all. The rest is on the people who notice the world has
+changed, and a pull request with no code in it.
 
 ## What it costs, and when not to
 
